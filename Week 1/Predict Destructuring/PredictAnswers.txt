@@ -1,0 +1,82 @@
+------------
+Problem 1
+------------
+
+const cars = ['Tesla', 'Mercedes', 'Honda']
+const [ randomCar ] = cars
+const [ ,otherRandomCar ] = cars
+//Predict the output
+console.log(randomCar)
+----Tesla----
+console.log(otherRandomCar)
+----Mercedes----
+
+------------
+Problem 2
+------------
+
+const employee = {
+    name: 'Elon',
+    age: 47,
+    company: 'Tesla'
+}
+const { name: otherName } = employee;
+//Predict the output
+console.log(name);
+----Error-(Something to do with variable not having a value)----
+console.log(otherName);
+----Elon----
+
+------------
+Problem 3
+------------
+
+const employee = {
+    name: 'Elon',
+    age: 47,
+    company: 'Tesla'
+}
+const { name: otherName } = employee;
+//Predict the output
+console.log(name);
+----12345----
+console.log(otherName);
+----12345  -->   //So I got this one wrong after checking it in Node.js. I'm thinking, if I read it right in the curriculum, that
+                hashedPassword is being used to call the value in password and assign it to password: for the variable person.
+                So, the answer should be Error:undefined as hashPassord id a value and not a variable. Still a little confused by it. 
+
+------------
+Problem 4
+------------
+
+const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
+const [,first] = numbers;
+const [,,,second] = numbers;
+const [,,,,,,,,third] = numbers;
+//Predict the output
+console.log(first == second);
+----false---
+console.log(first == third);
+----true---
+
+------------
+Problem 5
+------------
+
+const lastTest = {
+    key: 'value',
+    secondKey: [1, 5, 1, 8, 3, 3]
+}
+const { key } = lastTest;
+const { secondKey } = lastTest;
+const [ ,willThisWork] = secondKey;
+//Predict the output
+console.log(key);
+----value----
+console.log(secondKey);
+----[1,5,1,8,3,3]----
+console.log(secondKey[0]);
+----1----
+console.log(willThisWork);
+----5----
+
