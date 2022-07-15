@@ -34,13 +34,13 @@ const UserForm = (props) => {
                 <div>
                     <label>Email:</label>
                     <input type="email" value={email} onChange={(u) => setEmail(u.target.value)} />
-                    { email && email.length < 2 && <p>Email must be at least 2 characters!</p> }
+                    { email && email.length < 5 && <p>Email must be at least 5 characters!</p> }
                 </div>
                 <div>
                     <label>Password:</label>
                     <input type="password" value={password} onChange={(u) => setPassword(u.target.value)} />
                     { password && password.length < 8 && <p>Password must be at least 8 characters!</p> }
-                    { confirmPassword && confirmPassword != password && <p>Passwords do not match!</p> }
+                    { confirmPassword && confirmPassword != password && <p>Passwords must match!</p> }
                 </div>
                 <div>
                     <label>Confirm Password:</label>
