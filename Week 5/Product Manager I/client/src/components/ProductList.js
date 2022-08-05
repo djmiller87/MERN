@@ -27,7 +27,7 @@ const ProductList = () => {
     }
 
     return (
-        <div style={{width: 500}} >
+        <div style={{width: 1000}} >
             <h3 className='fs-3 d-flex justify-content-center'>All Products:</h3>
             {products.map((product) => (
                 <h4 className='fs-4 d-flex justify-content-between border border-3 border-secondary rounded p-2'>
