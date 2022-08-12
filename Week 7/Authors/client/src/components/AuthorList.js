@@ -29,15 +29,29 @@ const AuthorList = () => {
     return (
         <div style={{ width: 1000 }} >
             <h3 className='fs-3 d-flex justify-content-center'>All Authors:</h3>
-            {authors.map((author) => (
-                <h4 className='fs-4 d-flex justify-content-between border border-3 border-secondary rounded p-2'>
-                        <p className='text-secondary'>{author.name}</p>
-                    <div>
-                        <Link to={`/author/edit/${author._id}`} ><button className='btn btn-primary text-light me-2'>Edit Author</button></Link>
-                        <span><button onClick={() => deleteAuthor(author._id)} className='btn btn-danger'>Delete Author</button></span>
-                    </div>
-                </h4>
-            ))}
+            <table className="table table-bordered border-secondary border border-3 rounded p-2">
+                <thead className='border border-3 border-secondary'>
+                    <tr>
+                        <th scope="col" className='border border-3 border-secondary'>Author</th>
+                        <th scope="col" className='border border-3 border-secondary'>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {authors.map((author) => (
+                    <tr className='border border-3 border-secondary'>
+                        <td className='fs-4 d-flex justify-content-between'>
+                            {author.name}
+                        </td>
+                        <td className='border border-3 border-secondary'>
+                            <div>
+                                <Link to={`/author/edit/${author._id}`} ><button className='btn btn-primary text-light me-2'>Edit Author</button></Link>
+                                <span><button onClick={() => deleteAuthor(author._id)} className='btn btn-danger'>Delete Author</button></span>
+                            </div>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     )
 }

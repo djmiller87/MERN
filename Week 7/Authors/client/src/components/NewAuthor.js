@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const NewAuthor = () => {
@@ -29,7 +29,8 @@ const NewAuthor = () => {
                 <label className='col-sm-2 col-form-label'>Name:</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} className='form-control' />
                 {errors.name ? <p>{errors.name.message}</p> : null}
-                <button type="submit" className="btn btn-primary mt-3">Add Author</button>
+                <Link to={'/'}><button className="btn btn-primary mt-3 me-3">Cancel</button></Link>
+                <button type="submit" className="btn btn-primary mt-3 ">Add Author</button>
             </form>
         </div>
     );
