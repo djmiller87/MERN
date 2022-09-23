@@ -35,8 +35,8 @@ const UpdateAuthor = () => {
                 <label className='col-sm-2 col-form-label'>Name:</label>
                 <input type="text" value={name} name="name" onChange={(e) => setName(e.target.value)} className='form-control' />
                 {errors.name ? <p>{errors.name.message}</p> : null}
-                <Link to={'/'}><button className="btn btn-primary mt-3 me-3">Cancel</button></Link>
-                <button type="submit" className="btn btn-primary mt-3">Update Author</button>
+                <button type="submit" className="btn btn-primary mt-3 me-3">Update Author</button>
+                <Link to={'/'}><button className="btn btn-primary mt-3">Cancel</button></Link>
             </form>
         </div>
     );

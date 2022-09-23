@@ -18,6 +18,14 @@ const AuthorList = () => {
                 console.log(err);
             })
     }, [])
+    // Following function accredited to: 
+    //https://ourcodeworld.com/articles/read/764/how-to-sort-alphabetically-an-array-of-objects-by-key-in-javascript
+    const sortAuthors = (value) => {
+        return (a,b) => 
+                a[value].localeCompare(b[value]);
+        }
+
+
 
     const deleteAuthor = (authorId) => {
         axios.delete(`http://localhost:8000/api/authors/${authorId}`).then(res => {
@@ -27,7 +35,7 @@ const AuthorList = () => {
     }
 
     return (
-        <div style={{ width: 1000 }} >
+        <div style={{ width: 1000, height: 500}} className="overflow-auto" >
             <h3 className='fs-3 d-flex justify-content-center'>All Authors:</h3>
             <table className="table table-bordered border-secondary border border-3 rounded p-2">
                 <thead className='border border-3 border-secondary'>
@@ -36,8 +44,8 @@ const AuthorList = () => {
                         <th scope="col" className='border border-3 border-secondary'>Options</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {authors.map((author) => (
+                <tbody >
+                    {authors.sort(sortAuthors("name")).map((author) => (
                     <tr className='border border-3 border-secondary'>
                         <td className='fs-4 d-flex justify-content-between'>
                             {author.name}
